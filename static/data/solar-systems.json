@@ -1,0 +1,113 @@
+{
+    "System-1": {
+        "scale": 50,
+        "distanceFromParent": 0,
+        "rotationSpeedAroundParent": 0.000,
+        "rotationSpeedAroundSelf": 0.005,
+        "tint": [0.5,0.3,0,0, 0.3,0.2,0,0, 0.3,0.2,0.1,0, 0,0,0,1],
+        "children": [
+            {
+                "scale": 10,
+                "distanceFromParent": 90,
+                "rotationSpeedAroundParent": 0.001,
+                "rotationSpeedAroundSelf": 0.000,
+                "tint": [0.8,0,0,0, 0.2,0,0,0, 0.2,0,0,0, 0,0,0,1]
+            }
+        ]
+    },
+
+    "System-2": {
+        "scale": 30,
+        "distanceFromParent": 0,
+        "rotationSpeedAroundParent": 0.000,
+        "rotationSpeedAroundSelf": 0.001,
+        "tint": [0.5,0.3,0,0, 0.3,0.2,0,0, 0.3,0.2,0.1,0, 0,0,0,1],
+        "children": [
+            {
+                "scale": 5,
+                "distanceFromParent": 50,
+                "rotationSpeedAroundParent": 0.005,
+                "rotationSpeedAroundSelf": 0.005,
+                "tint": [0.8,0,0,0, 0.2,0,0,0, 0.2,0,0,0, 0,0,0,1]
+            },
+            {
+                "scale": 10,
+                "distanceFromParent": 100,
+                "rotationSpeedAroundParent": 0.002,
+                "rotationSpeedAroundSelf": 0.005,
+                "tint": [0.1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1],
+                "children": [
+                    {
+                        "scale": 5,
+                        "distanceFromParent": 20,
+                        "rotationSpeedAroundParent": 0.005,
+                        "rotationSpeedAroundSelf": 0.010,
+                        "tint": [0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0,0,0,1]
+                    }
+                ]
+            },
+            {
+                "scale": 7,
+                "distanceFromParent": 200,
+                "rotationSpeedAroundParent": 0.001,
+                "rotationSpeedAroundSelf": 0.003,
+                "tint": [0.5,0,0.3,0, 0,0.1,0,0, 0.4,0,1,0, 0,0,0,1],
+                "children": [
+                    {
+                        "scale": 2,
+                        "distanceFromParent": 20,
+                        "rotationSpeedAroundParent": 0.005,
+                        "rotationSpeedAroundSelf": 0.010,
+                        "tint": [0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0,0,0,1]
+                    },
+                    {
+                        "scale": 2,
+                        "distanceFromParent": 30,
+                        "rotationSpeedAroundParent": 0.003,
+                        "rotationSpeedAroundSelf": 0.010,
+                        "tint": [0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0,0,0,1]
+                    }
+                ]
+            }
+        ]
+    },
+
+
+
+    "System-3": {
+        "scale": 40,
+        "distanceFromParent": 0,
+        "rotationSpeedAroundParent": 0.000,
+        "rotationSpeedAroundSelf": 0.001,
+        "tint": [0.5,0.3,0,0, 0.3,0.2,0,0, 0.3,0.2,0.1,0, 0,0,0,1],
+        "children": [
+            {
+                "scale": 20,
+                "distanceFromParent": 120,
+                "rotationSpeedAroundParent": 0.002,
+                "rotationSpeedAroundSelf": 0.005,
+                "tint": [0.1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1],
+                "children": [
+                    {
+                        "scale": 10,
+                        "distanceFromParent": 50,
+                        "rotationSpeedAroundParent": 0.005,
+                        "rotationSpeedAroundSelf": 0.010,
+                        "tint": [0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0,0,0,1],
+                        "children": [
+                            {
+                                "scale": 5,
+                                "distanceFromParent": 20,
+                                "rotationSpeedAroundParent": -0.020,
+                                "rotationSpeedAroundSelf": 0.020,
+                                "tint": [0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0.2,0.2,0.2,0, 0,0,0,1]
+                            }        
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+
+
+}
