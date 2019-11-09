@@ -181,14 +181,14 @@ export function LoadOBJMesh(gl: WebGL2RenderingContext, data: string){
     return mesh;
 }
 
-export function ColoredSphere(gl: WebGL2RenderingContext, verticalResolution: number=32, horizontalResolution: number=32): Mesh{
+export function ColoredCubeSphere(gl: WebGL2RenderingContext, verticalResolution: number=32, horizontalResolution: number=32): Mesh{
     // TODO: Create a colored sphere mesh and return it
     let mesh = ColoredCube(gl);
     return mesh;
 }
 
 // all i need is the gl and the radius and for the center it will be the origin of the world
-export function ColoredSphere1(gl: WebGL2RenderingContext, sectorCount:number, stackCount:number, radius:number = 1): Mesh {
+export function ColoredSphere(gl: WebGL2RenderingContext, sectorCount:number, stackCount:number, radius:number = 1): Mesh {
     console.log("redius is " + radius);
     let sectorStep:number = 2 * Math.PI / sectorCount;
     let stackStep = Math.PI / stackCount;

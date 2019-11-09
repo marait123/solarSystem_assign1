@@ -52,7 +52,7 @@ export default class SphereScene extends Scene {
         this.program.link();
 
         // Create a colored rectangle using our new Mesh class
-        this.mesh = MeshUtils.ColoredSphere1(this.gl, this.verticalResolution, this.horizontalResolution);
+        this.mesh = MeshUtils.ColoredSphere(this.gl, this.verticalResolution, this.horizontalResolution);
 
         this.gl.clearColor(0,0,0,1);
 

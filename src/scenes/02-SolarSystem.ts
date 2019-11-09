@@ -48,7 +48,7 @@ export default class SolarSystemScene extends Scene {
         this.program.attach(this.game.loader.resources["color.frag"], this.gl.FRAGMENT_SHADER);
         this.program.link();
 
-        this.mesh = MeshUtils.ColoredSphere(this.gl);
+        this.mesh = MeshUtils.ColoredSphere(this.gl,20,20);
         this.debugCubeMesh = MeshUtils.ColoredCube(this.gl);
 
         this.gl.clearColor(0,0,0,1);
@@ -58,7 +58,9 @@ export default class SolarSystemScene extends Scene {
         this.camera.position = vec3.fromValues(100,100,100);
         this.camera.setTarget(vec3.fromValues(0,0,0));
         this.camera.aspectRatio = this.gl.drawingBufferWidth/this.gl.drawingBufferHeight;
-        
+        this.camera.far = 1000;
+
+
         this.controller = new FlyCameraController(this.camera, this.game.input);
         this.controller.movementSensitivity = 0.5;
 
@@ -90,13 +92,40 @@ export default class SolarSystemScene extends Scene {
         let matPlanet = mat4.clone(parent);
         mat4.rotateY(matPlanet, matPlanet, this.time*system.rotationSpeedAroundSelf);
         mat4.scale(matPlanet, matPlanet, [system.scale, system.scale, system.scale]);
-
         this.drawSphere(matPlanet, system.tint);
+       
 
         if(system.children) 
+        {
             console.log(`This object has ${system.children.length} ${system.children.length==1?"child":"children"}`);
+            for (let index = 0; index < system.children.length; index++) {
+                let matChild = mat4.clone(parent);   
+                // translate 
+                //rotate around the y
+                mat4.rotateY(matChild, matChild, this.time * system.children[index].rotationSpeedAroundParent); // rotate around the father
+                mat4.translate(matChild, matChild, [0,0,system.children[index].distanceFromParent]);
+             //   mat4.rotateY(matChild, matChild, 2); // rotate around self
+                this.drawSystem(matChild,system.children[index]);
+            }
+            
+            
+        }
     }
 
+    private drawSubSystem(parent: mat4, system: SolarSystemDescription){
+        // TODO: Modify this function to draw the whole solar system
+        let matChild = mat4.clone(parent);
+        mat4.rotateY(matChild,matChild,system.rotationSpeedAroundParent);
+        mat4.translate(matChild,matChild,vec3.fromValues(5,0,0));
+        //mat4.scale(parent, parent, [1/system.scale, 1/system.scale, 1/system.scale]);
+        this.drawSphere(matChild,system.tint);
+        if(system.children) 
+        {
+            for (let index = 0; index < system.children.length; index++) {
+                this.drawSubSystem(matChild, system.children[index])                
+            }
+        }
+    }
     // Given an MVP and a tint matrix, it draws a sphere
     private drawSphere(MVP: mat4, tint: ArrayLike<number>) {
         this.program.setUniformMatrix4fv("MVP", false, MVP);
