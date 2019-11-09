@@ -103,7 +103,7 @@ export default class SolarSystemScene extends Scene {
                 // translate 
                 //rotate around the y
                 mat4.rotateY(matChild, matChild, this.time * system.children[index].rotationSpeedAroundParent); // rotate around the father
-                mat4.translate(matChild, matChild, [0,0,system.children[index].distanceFromParent]);
+                mat4.translate(matChild, matChild, [system.children[index].distanceFromParent,0,0]);
              //   mat4.rotateY(matChild, matChild, 2); // rotate around self
                 this.drawSystem(matChild,system.children[index]);
             }
